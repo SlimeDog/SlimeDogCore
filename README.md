@@ -7,14 +7,16 @@ What we will do:
 - SlimeDogCore and SlimeDog resources will be updated to support Paper and Spigot 1.20.6 and 1.21.0.
 - SlimeDog Github repositories will be archived.
 - This notice will be posted
-  - on all SlimeDog resources on SpigotMC.
-  - in the README for all SlimeDog repositories on Github.
-  - on all SlimeDog wikis on Github. 
+  - on the Overview and Documentation pages of SlimeDog resources on SpigotMC.
+  - in the README for  SlimeDog repositories on Github.
+  - on the Home page of SlimeDog wikis on Github. 
 - SlimeDog resources will be removed from bStats.
 - SlimeDog resources will be removed from Hangar, so that others may post resources with the same names.
 - SlimeDog/AggressiveAnimals will be removed from Modrinth (no other SlimeDog resources were posted there).
 
 Support for future Minecraft versions:
+- Some SlimeDog resources — EntityCount and PluginVersions, for example — will likely work well into the future, but there are no guarantees.
+- Other SlimeDog resources — AggressiveAnimals and pHD, for example — will likely not work on future MC versions without updates.
 - All SlimeDog resources are open-source, released under GPL3 licenses.
 - SlimeDog resources may be forked and updated to support future Minecraft versions, or for any other purpose permitted under GPL3 licensure.
 </td></tr></table>
