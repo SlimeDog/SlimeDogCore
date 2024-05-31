@@ -12,7 +12,7 @@ What we will do:
 
 Support for future Minecraft versions:
 - SlimeDogCore will likely work well into the future, but there are no guarantees
-- SlimeDogCore is open-source, released under GPL3 license
+- SlimeDogCore is open-source, released under a GPL3 license
 - SlimeDogCore may be forked and updated to support future Minecraft versions, or for any other purpose permitted under GPL3 licensure
 </td></tr></table>
 
