@@ -1,19 +1,18 @@
 <table border=1><tr><td>
-<h2>🛑 End Of Life for SlimeDog resources</h2>
+<h2>🛑 End Of Life for SlimeDog/SlimeDogCore</h2>
 
-SlimeDog support for Minecraft plugins will reach end-of-life with releases for MC 1.21.0
+SlimeDog/SlimeDogCore has reached end-of-life
 
-What we will do:
-- Update SlimeDogCore to support Paper and Spigot 1.20.6 and 1.21.0
-- Archive SlimeDogCore repository
-- Post EOL notices
-  - `README` for SlimeDogCore repository on Github
-  - `Home` page of SlimeDogCore wiki on Github
+Completed tasks:
+- Updated SlimeDog/SlimeDogCore to support Paper and Spigot 1.20.6 and 1.21.0
+- Posted end-of-life notices
+  - `README` for SlimeDog/SlimeDogCore repository on Github
+  - `Home` page of SlimeDog/SlimeDogCore wiki on Github
+- Archived SlimeDog/SlimeDogCore Github repository
 
 Support for future Minecraft versions:
-- SlimeDogCore will likely work well into the future, but there are no guarantees
-- SlimeDogCore is open-source, released under a GPL3 license
-- SlimeDogCore may be forked and updated to support future Minecraft versions, or for any other purpose permitted under GPL3 licensure
+- SlimeDog/SlimeDogCore will likely work on future Minecraft versions, but there is no guarantee
+- Anyone may fork SlimeDogCore to support future Minecraft versions, or for any other purpose permitted under the GPL3 license
 </td></tr></table>
 
 ## SlimeDogCore
