@@ -11,6 +11,8 @@ import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.permissions.PermissionAttachmentInfo;
 import org.bukkit.plugin.Plugin;
 
+import net.kyori.adventure.text.Component;
+
 public class MockSender implements CommandSender {
     private final Logger logger;
 
@@ -127,6 +129,11 @@ public class MockSender implements CommandSender {
     @Override
     public String getName() {
         return "MockSender";
+    }
+
+    @Override
+    public Component name() {
+        return Component.text(getName());
     }
 
     @Override

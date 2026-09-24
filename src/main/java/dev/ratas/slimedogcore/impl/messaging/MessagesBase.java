@@ -19,7 +19,7 @@ import dev.ratas.slimedogcore.api.reload.SDCReloadable;
 import dev.ratas.slimedogcore.impl.messaging.factory.MessageFactory;
 import dev.ratas.slimedogcore.impl.messaging.mini.MiniMessageUtil;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.minimessage.internal.parser.ParsingExceptionImpl;
+import net.kyori.adventure.text.minimessage.ParsingException;
 
 public abstract class MessagesBase implements SDCReloadable {
     private final SDCCustomConfig config;
@@ -84,7 +84,7 @@ public abstract class MessagesBase implements SDCReloadable {
                 MiniMessage mm = MiniMessage.miniMessage();
                 try {
                     mm.deserialize(raw);
-                } catch (ParsingExceptionImpl e) {
+                } catch (ParsingException e) {
                     throw new IllegalMessageException(this, "Illegally formatted message: " + raw);
                 }
             }
