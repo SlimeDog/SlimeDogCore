@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: dev.ratas.slimedogcore.impl.messaging.MiniMessageDetectionTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in dev.ratas.slimedogcore.impl.messaging.MiniMessageDetectionTest
