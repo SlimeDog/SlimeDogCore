@@ -1,7 +1,7 @@
 # SlimeDogCore
-Core functionality for high-quality Minecraft resources produced by [SlimeDog](https://github.com/SlimeDog) and engineered by (mostly) [mart-r](https://github.com/mart-r).
+⚠️ On 2026-09-24, SlimeDogCore was updated by Claude Code to support Paper 26.3 (and earlier Paper versions). No warranty is provided.
 
-⚠️ On 2026-09-24, SlimeDogCore was updated by Claude Code to support Paper 26.3. No warranty is provided.
+Core functionality for high-quality Minecraft resources produced by [SlimeDog](https://github.com/SlimeDog) and engineered by (mostly) [mart-r](https://github.com/mart-r).
 
 ⚠️ SlimeDogCore is a work-in-progress.
 You are welcome to use it under the terms of the GPL3 license,
