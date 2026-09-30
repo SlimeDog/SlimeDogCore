@@ -115,7 +115,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.12.0</version>
         <configuration>
                 <failOnError>false</failOnError>
                 <encoding>${project.build.sourceEncoding}</encoding>
