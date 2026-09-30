@@ -27,9 +27,9 @@ public interface SDCQuadrupleContextMessageFactory<T1, T2, T3, T4>
      * @param context4 the fourth context
      * @return the corrseponding message
      */
-    default SDCMessage<SDCQuadrupleContext<T1, T2, T3, T4>> createWith(T1 context1, T2 context2, T3 contect3,
+    default SDCMessage<SDCQuadrupleContext<T1, T2, T3, T4>> createWith(T1 context1, T2 context2, T3 context3,
             T4 context4) {
-        return getMessage(getContextFactory().getContext(context1, context2, contect3, context4));
+        return getMessage(getContextFactory().getContext(context1, context2, context3, context4));
     }
 
 }

@@ -2,11 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.SlimeDog</groupId>
   <artifactId>SlimeDogCore</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <name>SlimeDogCore</name>
   <description>SlimeDog core</description>
   <inceptionYear>2022</inceptionYear>
   <properties>
+    <!-- adventure-platform (latest 4.4.1) only supports the Adventure 4.x line;
+         every bundled Adventure module is pinned to it via the BOM below -->
+    <adventure.version>4.21.0</adventure.version>
     <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -19,12 +22,26 @@
     </repository>
   </repositories>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>net.kyori</groupId>
+        <artifactId>adventure-bom</artifactId>
+        <version>${adventure.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>io.papermc.paper</groupId>
       <artifactId>paper-api</artifactId>
       <version>1.17.1-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
+      <!-- paper-api 1.17.1 -> json-simple 1.1.1 drags in junit 4.10 (compile scope),
+           which Surefire 3.x rejects; the tests are JUnit 5 -->
       <exclusions>
         <exclusion>
           <groupId>junit</groupId>
@@ -47,13 +64,13 @@
     <dependency>
       <groupId>net.kyori</groupId>
       <artifactId>adventure-api</artifactId>
-      <version>5.2.0</version>
+      <version>${adventure.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>net.kyori</groupId>
       <artifactId>adventure-text-minimessage</artifactId>
-      <version>5.2.0</version>
+      <version>${adventure.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -101,7 +118,7 @@
         <version>3.7.0</version>
         <configuration>
                 <failOnError>false</failOnError>
-                <encoding>ISO-8859-1</encoding>
+                <encoding>${project.build.sourceEncoding}</encoding>
                 <doctitle>${project.name} v${project.version} JavaDocs</doctitle>
                 <windowtitle>${project.name} JavaDocs</windowtitle>
                 <bottom>Copyright &#169; ${project.inceptionYear}&#x2013;{currentYear}
@@ -115,7 +132,7 @@
                 <execution>
                         <phase>package</phase>
                         <goals>
-                                <goal>aggregate-jar</goal>
+                                <goal>jar</goal>
                         </goals>
                 </execution>
         </executions>
@@ -130,6 +147,10 @@
                       <pattern>net.kyori</pattern>
                       <shadedPattern>dev.ratas.slimedogcore.shade.kyori</shadedPattern>
                   </relocation>
+                  <relocation>
+                      <pattern>com.google.gson</pattern>
+                      <shadedPattern>dev.ratas.slimedogcore.shade.gson</shadedPattern>
+                  </relocation>
               </relocations>
           </configuration>
           <executions>
@@ -139,8 +160,24 @@
                       <goal>shade</goal>
                   </goals>
                   <configuration>
-                      <createDependencyReducedPom>false</createDependencyReducedPom>
+                      <!-- Adventure is shaded + relocated into this jar, so the published POM must
+                           not advertise it, or consumers bundle a second, unrelocated copy -->
+                      <createDependencyReducedPom>true</createDependencyReducedPom>
                       <minimizeJar>true</minimizeJar>
+                      <filters>
+                          <filter>
+                              <artifact>*:*</artifact>
+                              <excludes>
+                                  <exclude>META-INF/MANIFEST.MF</exclude>
+                                  <exclude>module-info.class</exclude>
+                                  <exclude>META-INF/versions/**</exclude>
+                                  <exclude>META-INF/*.kotlin_module</exclude>
+                                  <exclude>org/jetbrains/annotations/**</exclude>
+                                  <exclude>org/intellij/lang/annotations/**</exclude>
+                                  <exclude>org/jspecify/**</exclude>
+                              </excludes>
+                          </filter>
+                      </filters>
                       <transformers>
                           <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer"></transformer>
                       </transformers>

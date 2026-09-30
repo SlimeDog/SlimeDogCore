@@ -25,8 +25,8 @@ public interface SDCTripleContextMessageFactory<T1, T2, T3> extends SDCMessageFa
      * @param context3 the third context
      * @return the corrseponding message
      */
-    default SDCMessage<SDCTripleContext<T1, T2, T3>> createWith(T1 context1, T2 context2, T3 contect3) {
-        return getMessage(getContextFactory().getContext(context1, context2, contect3));
+    default SDCMessage<SDCTripleContext<T1, T2, T3>> createWith(T1 context1, T2 context2, T3 context3) {
+        return getMessage(getContextFactory().getContext(context1, context2, context3));
     }
 
 }
