@@ -9,3 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      # Compile target is the oldest Paper that PluginVersions (which bundles SDC)
+      # supports; see the comment on paper-api in pom.xml
+      - dependency-name: "io.papermc.paper:paper-api"
+      # adventure-platform (latest 4.4.x) only supports the Adventure 4.x line
+      - dependency-name: "net.kyori:*"
+        update-types: ["version-update:semver-major"]
