@@ -9,7 +9,7 @@
   <properties>
     <!-- adventure-platform (latest 4.4.1) only supports the Adventure 4.x line;
          every bundled Adventure module is pinned to it via the BOM below -->
-    <adventure.version>4.21.0</adventure.version>
+    <adventure.version>4.26.1</adventure.version>
     <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
